@@ -23,7 +23,7 @@ const AppointmentForm: React.FC<AppointmentFormProps> = ({ users, fetchAppointme
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const formattedDate = moment.utc(date).toISOString().replace('.000Z', 'Z');
+    const formattedDate = moment(date).toISOString().replace('.000Z', 'Z');
     const [hours, minutes] = time.split(':').map(Number);
     const totalMinutes = moment.duration({ hours, minutes }).asMinutes();
 
